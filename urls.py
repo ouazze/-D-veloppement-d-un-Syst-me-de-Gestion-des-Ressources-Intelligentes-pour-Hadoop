@@ -1,24 +1,14 @@
-"""myproject URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from .views import list_hdfs_files, upload_to_hdfs, download_from_hdfs , hadoop_overview
+from .views import hdfs_usage
 from . import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('hadoop/', include('hadoop_integration.urls')),  # Include Hadoop app URLs
-    path('', views.home_view, name='home'),  # Root path to home view
+    path('list-files/', list_hdfs_files, name='list_hdfs_files'),
+    path('upload-file/', upload_to_hdfs, name='upload_to_hdfs'),
+    path('download-file/', download_from_hdfs, name='download_from_hdfs'),
+    path('hdfs-usage/', hdfs_usage, name='hdfs_usage'),  # Add this URL
+    path('', hadoop_overview, name='hadoop'),  # This is the Hadoop overview page
+    
+    path('list-files/<path:path>/', views.list_hdfs_files, name='list_hdfs_files'),
+    path('read/<path:file_path>/', views.read_file, name='read_file'),
 ]
