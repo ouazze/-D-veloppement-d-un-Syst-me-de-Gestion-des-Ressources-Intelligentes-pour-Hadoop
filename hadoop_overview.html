@@ -1,0 +1,20 @@
+{% load static %}
+<!-- hadoop_integration/templates/hadoop_integration/hadoop_overview.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadoop Overview</title>
+    <link rel="stylesheet" href="{% static 'hadoop_integration/css/hadoop.css' %}">
+</head>
+<body>
+    <h1>Hadoop Overview</h1>
+    <ul>
+        <li><a href="{% url 'list_hdfs_files' %}">List HDFS Files</a></li>
+        <li><a href="{% url 'upload_to_hdfs' %}">Upload to HDFS</a></li>
+        <li><a href="{% url 'download_from_hdfs' %}">Download from HDFS</a></li>
+        <li><a href="{% url 'hdfs_usage' %}">HDFS Usage</a></li>
+    </ul>
+</body>
+</html>

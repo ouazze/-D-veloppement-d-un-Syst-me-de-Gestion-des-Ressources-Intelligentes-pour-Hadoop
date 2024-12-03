@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download from HDFS</title>
+    <link rel="stylesheet" href="{% static 'hadoop_integration/css/download.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Download a File from HDFS</h1>
+    </header>
+    
+    <main>
+        <section class="download-section">
+            <h2>Select a File to Download</h2>
+            <form method="post">
+                {% csrf_token %}
+                <label for="file_name">Enter the file name:</label>
+                <input type="text" id="file_name" name="file_name" placeholder="example.txt">
+                <button type="submit">Download</button>
+            </form>
+            
+            {% if error_message %}
+                <p class="error">{{ error_message }}</p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDFS and System Usage</title>
+    <link rel="stylesheet" href="{% static 'hadoop_integration/css/hdfs_usage.css' %}">
+</head>
+<body>
+    <header>
+        <h1>HDFS and System Usage</h1>
+    </header>
+    <main class="usage-section">
+        <h2>HDFS Storage Information</h2>
+        {% if hdfs_capacity %}
+            <table class="usage-table">
+                <tr>
+                    <th>Total HDFS Capacity</th>
+                    <td>{{ hdfs_capacity }} bytes</td>
+                </tr>
+                <tr>
+                    <th>HDFS Used</th>
+                    <td>{{ hdfs_used }} bytes</td>
+                </tr>
+                <tr>
+                    <th>HDFS Remaining</th>
+                    <td>{{ hdfs_remaining }} bytes</td>
+                </tr>
+            </table>
+        {% else %}
+            <p class="error">Error retrieving HDFS data.</p>
+        {% endif %}
+        
+        <h2>System Resource Usage</h2>
+        <table class="usage-table">
+            <tr>
+                <th>Total Memory</th>
+                <td>{{ system_memory.total | filesizeformat }}</td>
+            </tr>
+            <tr>
+                <th>Used Memory</th>
+                <td>{{ system_memory.used | filesizeformat }}</td>
+            </tr>
+            <tr>
+                <th>Available Memory</th>
+                <td>{{ system_memory.available | filesizeformat }}</td>
+            </tr>
+            <tr>
+                <th>Memory Usage</th>
+                <td>{{ system_memory.percent }}%</td>
+            </tr>
+            <tr>
+                <th>CPU Usage</th>
+                <td>{{ cpu_usage }}%</td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

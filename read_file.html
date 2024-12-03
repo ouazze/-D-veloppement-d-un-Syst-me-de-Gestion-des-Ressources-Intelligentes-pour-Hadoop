@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Content: {{ file_path }}</title>
+    <link rel="stylesheet" href="{% static 'hadoop_integration/css/read_file.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Content of {{ file_path }}</h1>
+    </header>
+    <main>
+        <pre>{{ file_content }}</pre>
+    </main>
+</body>
+</html>
