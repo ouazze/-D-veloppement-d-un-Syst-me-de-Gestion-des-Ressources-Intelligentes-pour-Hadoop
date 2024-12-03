@@ -1,0 +1,53 @@
+/* list_hdfs_files.css */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: url('../images/dow.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.file-list-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.file-list {
+    list-style-type: none;
+}
+
+.file-list li {
+    margin: 10px 0;
+}
+
+.file-list a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.file-list a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+

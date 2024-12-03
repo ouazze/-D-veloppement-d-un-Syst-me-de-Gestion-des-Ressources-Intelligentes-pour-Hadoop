@@ -1,0 +1,38 @@
+/* static/hadoop_integration/css/styles.css */
+body {
+    background-image: url('../images/hadoop.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #ffcc00;
+    font-size: 1.2em;
+}
+
+ul li a:hover {
+    color: #fff;
+}
